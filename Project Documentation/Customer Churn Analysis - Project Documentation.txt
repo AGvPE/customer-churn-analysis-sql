@@ -1,0 +1,383 @@
+CUSTOMER CHURN ANALYSIS USING SQL
+
+Prepared by: Agape Watat
+Tools Used: SQL, SQLite, DB Browser for SQLite
+Dataset: IBM Telco Customer Churn Dataset
+
+
+1. PROJECT OVERVIEW
+
+Customer churn occurs when customers discontinue their relationship with a business or stop using its products or services.
+
+This project analyses customer churn data from a telecommunications company to understand customer behaviour, identify patterns associated with customer attrition, and highlight customer segments with higher churn rates.
+
+Using SQL, the analysis examines customer demographics, contract types, payment methods, internet services, subscription features, customer tenure, and billing information.
+
+The objective is to transform raw customer data into meaningful business insights that can help the company understand its customer retention challenges and develop more effective retention strategies.
+
+2. BUSINESS PROBLEM
+
+Customer churn can negatively affect a telecommunications company's revenue, customer relationships, and long-term business growth.
+
+The company needs to understand which customers are more likely to discontinue its services and what customer characteristics or service-related factors are associated with higher churn rates.
+
+Without proper analysis, it may be difficult to identify high-risk customer segments and develop targeted customer retention strategies.
+
+This project addresses that challenge by analysing customer data to uncover churn patterns and provide insights that can support better business decisions.
+
+
+3. PROJECT OBJECTIVES
+
+The key objectives of this analysis are to:
+
+i. Determine the overall customer churn and retention rates.
+
+ii. Identify contract types with the highest customer churn rates.
+
+iii. Examine churn patterns across different payment methods and internet service categories.
+
+iv. Analyse the relationship between customer tenure and churn.
+
+v. Compare churn rates based on customer demographics and subscription services.
+
+vi. Examine average monthly and total charges across churn categories.
+
+vii. Identify customer segments that may require targeted retention strategies.
+
+viii. Provide data-driven recommendations to support customer retention efforts.
+
+
+4. DATASET DESCRIPTION
+
+The analysis uses the IBM Telco Customer Churn dataset, which contains customer information from a telecommunications company.
+
+The dataset consists of 7,043 customer records and includes information on:
+
+- Customer demographics: Gender, senior citizen status, and dependants.
+- Account information: Tenure, contract type, and payment method.
+- Services subscribed to: Internet service, online security, and technical support.
+- Billing information: Monthly charges and total charges.
+- Customer status: Whether a customer churned or remained with the company.
+
+The dataset provides the information needed to examine customer behaviour and identify patterns associated with customer churn.
+
+
+5. TOOLS AND TECHNOLOGIES
+
+The following tools were used for this project:
+
+i. SQL (Structured Query Language):
+   Used to query, filter, group, aggregate, and analyse customer records.
+
+ii. SQLite:
+   Used as the relational database management system for storing and querying the dataset.
+
+iii. DB Browser for SQLite:
+   Used to import the dataset, execute SQL queries, and inspect analysis results.
+
+iv. TextEdit:
+   Used to create and maintain the SQL script and project documentation.
+
+6. ANALYSIS APPROACH
+
+The analysis was conducted using SQL queries in SQLite. The process involved the following stages:
+
+6.1 Data Overview and Validation
+
+- Examined the total number of customer records.
+- Identified the number of customers who had discontinued their services.
+- Established the dataset size before proceeding with further analysis.
+
+6.2 Overall Churn Analysis
+
+- Calculated the total number of customers who churned and those who remained.
+- Determined the overall churn rate and customer retention rate.
+
+6.3 Customer Segmentation Analysis
+
+- Analysed churn across different contract types.
+- Compared churn rates across payment methods.
+- Grouped customers by tenure to examine how churn varied over time.
+- Examined churn patterns across internet service categories.
+- Compared churn between senior and non-senior customers.
+
+6.4 Billing Analysis
+
+- Compared average monthly charges between churned and retained customers.
+- Compared average total charges across both customer groups.
+- Examined average monthly charges across contract types and churn status.
+
+6.5 Service Subscription Analysis
+
+- Examined churn among customers with and without technical support.
+- Analysed churn across online security subscription categories.
+- Combined technical support and online security subscriptions to identify differences in churn rates.
+
+6.6 Combined Customer Segmentation
+
+- Combined contract type and internet service to identify customer groups with particularly high or low churn rates.
+
+SQL functions and techniques used included:
+- COUNT() and SUM()
+- AVG()
+- ROUND()
+- CASE WHEN statements
+- GROUP BY
+- ORDER BY
+- WHERE
+- Aggregate calculations and conditional logic.
+
+7. KEY FINDINGS
+
+The analysis revealed several important patterns in customer churn.
+
+7.1 Overall Customer Churn
+
+- Total customers analysed: 7,043.
+- Customers who churned: 1,869.
+- Customers retained: 5,174.
+- Overall churn rate: 26.54%.
+- Customer retention rate: 73.46%.
+
+Approximately 27 out of every 100 customers in the dataset had discontinued their services.
+
+7.2 Churn by Contract Type
+
+- Month-to-month contracts recorded the highest churn rate at 42.71%.
+- One-year contracts recorded a churn rate of 11.27%.
+- Two-year contracts recorded the lowest churn rate at 2.83%.
+
+Customers on month-to-month contracts showed substantially higher churn rates than customers on longer-term contracts.
+
+7.3 Churn by Payment Method
+
+- Electronic check users had the highest churn rate at 45.29%.
+- Mailed check users recorded 19.11%.
+- Bank transfer users recorded 16.71%.
+- Credit card users recorded the lowest churn rate at 15.24%.
+
+Electronic check users represented a particularly high-churn customer segment.
+
+7.4 Churn by Customer Tenure
+
+- Customers with 0–12 months of tenure had the highest churn rate at 47.44%.
+- Customers with 13–24 months recorded 28.71%.
+- Customers with 25–48 months recorded 20.39%.
+- Customers with 49–60 months recorded 14.42%.
+- Customers with 61–72 months recorded the lowest churn rate at 6.61%.
+
+The results show a clear pattern: churn rates decreased as customer tenure increased.
+
+7.5 Churn by Internet Service
+
+- Fiber optic customers recorded the highest churn rate at 41.89%.
+- DSL customers recorded 18.96%.
+- Customers without internet service recorded the lowest rate at 7.40%.
+
+Fiber optic customers represented a high-churn segment requiring further investigation.
+
+7.6 Churn by Senior Citizen Status
+
+- Senior citizens recorded a churn rate of 41.68%.
+- Non-senior customers recorded a churn rate of 23.61%.
+
+The senior customer segment had a higher churn rate than non-senior customers.
+
+7.7 Average Charges by Churn Status
+
+- Customers who churned had average monthly charges of 74.44.
+- Retained customers had average monthly charges of 61.27.
+- Retained customers had higher average total charges of 2,555.34 compared with 1,531.80 for churned customers.
+
+The higher average total charges among retained customers may be associated with their longer customer tenure.
+
+7.8 Churn by Technical Support
+
+- Customers without technical support recorded a churn rate of 41.64%.
+- Customers with technical support recorded 15.17%.
+- Customers without internet service recorded 7.40%.
+
+Customers without technical support had a substantially higher churn rate.
+
+7.9 Churn by Online Security
+
+- Customers without online security recorded a churn rate of 41.77%.
+- Customers with online security recorded 14.61%.
+- Customers without internet service recorded 7.40%.
+
+Customers without online security showed a substantially higher churn rate.
+
+7.10 Churn by Combined Support and Security Services
+
+Among customers with internet service:
+
+- Customers with neither technical support nor online security recorded a churn rate of 48.96%.
+- Customers with only one of the two services recorded 21.82%.
+- Customers with both services recorded the lowest churn rate of 9.01%.
+
+This suggests a strong association between subscription to these additional services and lower customer churn.
+
+7.11 Churn by Contract Type and Internet Service
+
+- Month-to-month Fiber optic customers recorded the highest churn rate at 54.61%.
+- Month-to-month DSL customers recorded 32.22%.
+- Two-year Fiber optic customers recorded 7.23%.
+- Two-year DSL customers recorded the lowest churn rate at 1.91%.
+
+The combination of month-to-month contracts and Fiber optic internet service represented the highest-risk segment among the combinations analysed.
+
+7.12 Average Monthly Charges by Contract and Churn Status
+
+Customers who churned had higher average monthly charges than retained customers across all three contract types:
+
+- Month-to-month: 73.02 compared with 61.46.
+- One-year: 85.05 compared with 62.51.
+- Two-year: 86.78 compared with 60.01.
+
+This indicates that higher average monthly charges were associated with churn across the contract categories.
+
+8. BUSINESS RECOMMENDATIONS
+
+Based on the findings, the following actions are recommended to help improve customer retention:
+
+8.1 Strengthen Customer Retention During the First Year
+
+Since customers within their first 12 months recorded the highest churn rate (47.44%), the company should introduce an early-stage retention programme.
+
+Possible actions include:
+- Improving customer onboarding.
+- Conducting follow-up communication with new customers.
+- Providing early customer support and engagement.
+- Identifying dissatisfaction before customers decide to leave.
+
+8.2 Encourage Longer-Term Contract Adoption
+
+Month-to-month customers recorded a significantly higher churn rate than customers on one-year and two-year contracts.
+
+The company could:
+- Introduce incentives for customers who switch to longer-term contracts.
+- Offer loyalty benefits.
+- Communicate the value of longer-term subscriptions.
+
+8.3 Investigate High Churn Among Fiber Optic Customers
+
+Fiber optic customers recorded a churn rate of 41.89%, with month-to-month Fiber optic customers reaching 54.61%.
+
+The company should investigate:
+- Service reliability and internet performance.
+- Customer complaints and service interruptions.
+- Pricing competitiveness.
+- Customer satisfaction with the Fiber optic service.
+
+8.4 Review the Electronic Check Payment Experience
+
+Electronic check users recorded the highest payment-method churn rate at 45.29%.
+
+The company should investigate whether payment convenience, failed transactions, or payment-related customer experiences contribute to dissatisfaction.
+
+Alternative payment methods could also be promoted where appropriate.
+
+8.5 Promote Technical Support and Online Security Services
+
+Customers without technical support or online security recorded substantially higher churn rates.
+
+The company could:
+- Improve awareness of these services.
+- Offer relevant subscription bundles.
+- Communicate the benefits of additional security and support services.
+- Evaluate whether these services improve customer satisfaction and retention.
+
+8.6 Review Pricing and Customer Value
+
+Customers who churned had higher average monthly charges than retained customers.
+
+The company should investigate pricing concerns, perceived service value, and affordability, particularly among customers on longer-term contracts who churned.
+
+8.7 Introduce Targeted Retention Strategies
+
+Rather than applying the same retention strategy to every customer, the company should prioritise segments with higher observed churn rates.
+
+These include:
+- Customers within their first 12 months.
+- Month-to-month Fiber optic customers.
+- Electronic check users.
+- Customers without technical support or online security.
+- Senior citizen customers.
+
+The effectiveness of these recommendations should be monitored using customer retention and churn metrics over time.
+
+9. PROJECT CONCLUSION
+
+This project analysed 7,043 telecommunications customer records using SQL to identify patterns associated with customer churn.
+
+The analysis revealed an overall churn rate of 26.54% and highlighted several customer segments with notably higher churn rates.
+
+Key observations included:
+
+- Customers on month-to-month contracts had substantially higher churn rates than those on longer-term contracts.
+- Customers within their first 12 months had the highest churn rate.
+- Fiber optic customers and electronic check users showed relatively high churn rates.
+- Customers without technical support or online security recorded higher churn rates.
+- Customers who churned had higher average monthly charges than retained customers.
+
+The findings provide useful insights into customer behaviour and highlight areas where the company could investigate and improve its retention strategies.
+
+Through this project, SQL was used to transform raw customer records into structured analysis and actionable business insights.
+
+
+10. PROJECT LIMITATIONS
+
+Although the analysis provides useful insights, certain limitations should be considered:
+
+1. The analysis identifies relationships and patterns but does not establish cause-and-effect relationships.
+
+2. The dataset represents a specific telecommunications customer population, so the findings may not apply to every telecommunications company.
+
+3. The analysis uses the variables available in the dataset. Other factors, such as customer satisfaction scores, complaint history, competitor pricing, and service interruption records, were not included.
+
+4. The analysis is primarily descriptive and does not use predictive modelling to estimate the likelihood of individual customers churning.
+
+5. The dataset does not establish a specific reporting period for the overall churn rate; therefore, the 26.54% churn rate should not be interpreted as a monthly or annual rate.
+
+11. SKILLS DEMONSTRATED
+
+The project demonstrates the following technical and analytical skills:
+
+SQL Skills:
+- Writing structured SQL queries.
+- Data aggregation and summarisation.
+- Filtering and sorting records.
+- Grouping data using GROUP BY.
+- Conditional logic using CASE WHEN.
+- Calculating percentages and averages.
+- Analysing multiple customer variables.
+- Combining customer segments for deeper analysis.
+
+Data Analysis Skills:
+- Exploratory data analysis.
+- Customer segmentation.
+- Churn and retention analysis.
+- Identifying high-risk customer groups.
+- Interpreting analytical results.
+- Translating findings into business recommendations.
+
+Business Skills:
+- Problem-solving.
+- Business insight generation.
+- Data-driven decision-making.
+- Analytical reporting.
+- Communicating findings to support business strategy.
+
+
+12. PROJECT DELIVERABLES
+
+The completed project includes:
+
+1. SQL Script:
+   A documented SQL file containing 14 queries used to analyse customer churn.
+
+2. Project Documentation:
+   A written report outlining the business problem, objectives, dataset, analysis approach, key findings, recommendations, conclusion, and limitations.
+
+3. Supporting Materials:
+   Analysis screenshots and other relevant project evidence.
